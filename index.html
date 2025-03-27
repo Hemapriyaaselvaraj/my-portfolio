@@ -657,15 +657,73 @@ projects and technical systems.
       <hr />
 
       <section id="contact">
-        <div class="justify-content-center d-flex">
-          <p
-            class="display-5 fs-md-1 fs-sm-3 pt-2 pb-2"
-            style="font-weight: 500"
-          >
-            Contact
-          </p>
-        </div>
-        <p>In Contact</p>
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-12 order-md-1 order-2">
+          <div class=" bg-light m-4 p-4 rounded shadow ">
+              <h2 class="text-center mb-3">Contact Us</h2>
+              <form class="needs-validation">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    placeholder="Enter your name"
+                    required
+                  />
+                  <div class="invalid-feedback">Please enter your name.</div>
+                </div>
+  
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+                  />
+                  <div class="invalid-feedback">Please enter a valid email.</div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="mobile" class="form-label">Mobile Number</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="mobile"
+                    placeholder="Enter your mobile number"
+                    required
+                  />
+                  <div class="invalid-feedback">Please enter a valid mobile number.</div>
+                </div>
+  
+                <div class="mb-3">
+                  <label for="message" class="form-label">Message</label>
+                  <textarea
+                    class="form-control"
+                    id="message"
+                    rows="3"
+                    placeholder="Type your message"
+                    required
+                  ></textarea>
+                  <div class="invalid-feedback">Please enter your message.</div>
+                </div>
+  
+                <button type="submit" class="btn btn-primary w-100">
+                  Send Message
+                </button>
+              </form>
+          </div>
+          </div>
+          <div class=" col-lg-6 col-md-6 col-sm-12 align-content-center  order-md-2 order-1">
+            <img
+              src="images/contact.png"
+              style="width: 90%"
+              alt="contact-image"
+            />
+          </div>
+      </div>
       </section>
     </div>
 
