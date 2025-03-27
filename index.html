@@ -741,7 +741,7 @@ projects and technical systems.
     </footer>
 
     <script>
-      function validateContactForm() {
+       document.addEventListener("DOMContentLoaded", function () {
         var form = document.querySelector(".needs-validation");
 
         form.addEventListener("submit", function (event) {
@@ -771,9 +771,9 @@ projects and technical systems.
 
           form.classList.add("was-validated");
         });
-      }
+      
 
-      validateContactForm();
+    });
     </script>
   </body>
 </html>
