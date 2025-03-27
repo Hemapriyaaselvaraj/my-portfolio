@@ -4,10 +4,10 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((data) => {
       document.getElementById("navbar-placeholder").innerHTML = data;
 
-      // Get current page filename
+
       let currentPage = window.location.pathname.split("/").pop();
 
-      // Add 'active' class to the current page's navbar link
+
       document.querySelectorAll(".nav-link").forEach((link) => {
         if (link.getAttribute("href") === currentPage) {
           link.classList.add("active");

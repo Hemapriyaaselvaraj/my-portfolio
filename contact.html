@@ -15,9 +15,9 @@
   <body>
     <div id="navbar-placeholder"></div>
     <div class="container mt-5">
-        <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-12 order-md-1 order-2">
-        <div class="min-vh-100 bg-light m-4 p-4 rounded shadow ">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 order-md-1 order-2 align-content-center"  id="contact-form">
+          <div class="min-vh-100 bg-light m-4 p-4 rounded shadow">
             <h2 class="text-center mb-3">Contact Us</h2>
             <form class="needs-validation" novalidate>
               <div class="mb-3">
@@ -53,7 +53,9 @@
                   placeholder="Enter your mobile number"
                   required
                 />
-                <div class="invalid-feedback">Please enter a valid mobile number.</div>
+                <div class="invalid-feedback">
+                  Please enter a valid mobile number.
+                </div>
               </div>
               <div class="mb-3">
                 <label for="message" class="form-label">Message</label>
@@ -71,41 +73,56 @@
                 Send Message
               </button>
             </form>
+          </div>
         </div>
-        </div>
-        <div class=" col-lg-6 col-md-6 col-sm-12 align-content-center  order-md-2 order-1">
+        <div
+          class="col-lg-6 col-md-6 col-sm-12 align-content-center order-md-2 order-1"
+        >
           <img
             src="images/contact.png"
             style="width: 90%"
             alt="contact-image"
           />
         </div>
-    </div>
       </div>
+    </div>
 
     <div id="footer-placeholder"></div>
     <script src="/headerfooter.js"></script>
     <script>
-        (function () {
-          var form = document.querySelector(".needs-validation");
-      
-          form.addEventListener("submit", function (event) {
-            if (!form.checkValidity()) {
-              event.preventDefault();
-              event.stopPropagation();
-            }
-      
+      function validateContactForm() {
+        var form = document.querySelector(".needs-validation");
+
+        form.addEventListener("submit", function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+
             var emailInput = document.getElementById("email");
-      
+
             if (emailInput.validity.valueMissing) {
               emailInput.nextElementSibling.textContent = "Email is required.";
             } else if (emailInput.validity.typeMismatch) {
-              emailInput.nextElementSibling.textContent = "Please enter a valid email.";
+              emailInput.nextElementSibling.textContent =
+                "Please enter a valid email.";
             }
-      
-            form.classList.add("was-validated");
-          }, false);
-        })();
-      </script>
+          } else {
+            event.preventDefault();
+            event.stopPropagation();
+            
+            document.getElementById('contact-form').innerHTML = `
+   <div class="alert alert-success m-5 col-10 text-center" role="alert">
+  <p class="mb-0">Thank you for contacting us! Have a nice day! <i class="bi bi-emoji-smile"></i></p>
+</div>
+  `
+            
+          }
+
+          form.classList.add("was-validated");
+        });
+      }
+
+      validateContactForm();
+    </script>
   </body>
 </html>
